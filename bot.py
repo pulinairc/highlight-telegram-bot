@@ -28,21 +28,24 @@ logger = logging.getLogger(__name__)
 
 def dohighlight(update: Update, context: CallbackContext):
 
-    if any( re.findall( r'rolle', update.message.text, re.IGNORECASE ) ):
+    original_message = update.message.text
+    message_without_nick = re.sub( r'<([a-zA-Z\[\]\\`_\^\{\|\}][a-zA-Z0-9\[\]\\`_\^\{\|\}-]{1,31})> ', '', original_message )
+
+    if any( re.findall( r'rolle', message_without_nick, re.IGNORECASE ) ):
       mapped_tg_nick = '@rollee'
-    elif any( re.findall( r'Fanny', update.message.text, re.IGNORECASE ) ):
+    elif any( re.findall( r'Fanny', message_without_nick, re.IGNORECASE ) ):
       mapped_tg_nick = '@Fannynen'
-    elif any( re.findall( r'convulvau', update.message.text, re.IGNORECASE ) ):
+    elif any( re.findall( r'convulvau', message_without_nick, re.IGNORECASE ) ):
       mapped_tg_nick = '@jhuusari'
-    elif any( re.findall( r'Nasuu|Nanna', update.message.text, re.IGNORECASE ) ):
+    elif any( re.findall( r'Nasuu|Nanna', message_without_nick, re.IGNORECASE ) ):
       mapped_tg_nick = '@Nasuu'
-    elif any( re.findall( r'Pekafu', update.message.text, re.IGNORECASE ) ):
+    elif any( re.findall( r'Pekafu', message_without_nick, re.IGNORECASE ) ):
       mapped_tg_nick = '@Pekafu'
-    elif any( re.findall( r'raikas', update.message.text, re.IGNORECASE ) ):
+    elif any( re.findall( r'raikas', message_without_nick, re.IGNORECASE ) ):
       mapped_tg_nick = '@Raikasta'
-    elif any( re.findall( r'maakari', update.message.text, re.IGNORECASE ) ):
+    elif any( re.findall( r'maakari', message_without_nick, re.IGNORECASE ) ):
       mapped_tg_nick = '@maakarinen'
-    elif any( re.findall( r'blizzer', update.message.text, re.IGNORECASE ) ):
+    elif any( re.findall( r'blizzer', message_without_nick, re.IGNORECASE ) ):
       mapped_tg_nick = '@Blitzzeri'
     else:
       return
