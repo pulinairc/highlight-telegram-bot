@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-telegram-bot = "==13.1"
+pipenv = "==2022.5.2"
+requests = "==2.18.4"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
