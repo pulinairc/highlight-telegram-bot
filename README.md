@@ -1,5 +1,7 @@
 ## Telegram bot for matterbridge Telegram channel highlights
 
+**This was a cool idea and works as concept but unfortunately cannot be used because [Telegram does not allow seeing bot messages](https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots).**
+
 The gateway bot [matterbridge](https://github.com/42wim/matterbridge) doesn't know how to map users with Telegram nicks so the highlights don't work on Telegram side. This bot aims to fix that.
 
 ### Requirements 
